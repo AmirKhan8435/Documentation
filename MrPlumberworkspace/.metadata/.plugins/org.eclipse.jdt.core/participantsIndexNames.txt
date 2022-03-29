@@ -1,5 +1,0 @@
-INDEX VERSION 1.130
-H:\CDAC\CDAC\Project\MrPlumber\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3141684913.index
-\MrPlumberWebAPP\src
-H:\CDAC\CDAC\Project\MrPlumber\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3088879397.index
-\MrPlumberWebAPP\src
