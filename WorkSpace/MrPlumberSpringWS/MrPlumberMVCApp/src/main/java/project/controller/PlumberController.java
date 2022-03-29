@@ -21,7 +21,7 @@ public class PlumberController {
 	@Autowired
 	PlumberDAO plumberDAO;
 	
-<<<<<<< HEAD
+
 	/*
 	 * @PostMapping("/addPlumberindata") public String addPlumber(@RequestParam
 	 * String name,@RequestParam String last,@RequestParam String user,@RequestParam
@@ -48,7 +48,6 @@ public class PlumberController {
 	 * 
 	 * }
 	 */
-=======
 	@PostMapping("/addPlumberindata")
 	public String addPlumber(@RequestParam String name,@RequestParam String last,@RequestParam String user,@RequestParam String pass,@RequestParam String address,@RequestParam int pincode,@RequestParam String aadhar,@RequestParam String phone,@RequestParam String jdate)
 	{
@@ -80,17 +79,12 @@ public class PlumberController {
 		return "zalre";
 		
 	}
->>>>>>> 9d61d01ce58d46e9d745c92c5b0981315d826b8f
 	
 	@RequestMapping("/addplumber")
 	public String amir()
 	{
 		System.out.println("in amir");
-<<<<<<< HEAD
 		return "newaddPlumber";
-=======
-		return "newadd";
->>>>>>> 9d61d01ce58d46e9d745c92c5b0981315d826b8f
 		
 	}
 	

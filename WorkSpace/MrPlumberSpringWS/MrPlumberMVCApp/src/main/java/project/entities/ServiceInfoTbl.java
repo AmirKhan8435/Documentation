@@ -17,10 +17,7 @@ public class ServiceInfoTbl implements Serializable {
 
 	@Id
 	@Column(name="service_id")
-<<<<<<< HEAD
 	@GeneratedValue(strategy =GenerationType.IDENTITY )
-=======
->>>>>>> 9d61d01ce58d46e9d745c92c5b0981315d826b8f
 	private int serviceId;
 
 	@Column(name="service_amount")
