@@ -2,6 +2,9 @@ package project.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 import java.util.Date;
 import java.util.List;
 
@@ -10,7 +13,8 @@ import java.util.List;
 @Entity
 @Table(name="plumber_info_tbl")
 @NamedQuery(name="PlumberInfoTbl.findAll", query="SELECT p FROM PlumberInfoTbl p")
-public class PlumberInfoTbl implements Serializable {
+
+public class PlumberInfoTbl  implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -178,6 +182,11 @@ public class PlumberInfoTbl implements Serializable {
 		plumberServiceMapTbl.setPlumberInfoTbl(null);
 
 		return plumberServiceMapTbl;
+	}
+	
+	public PlumberInfoTbl(int id)
+	{
+		this.plumberId = id;
 	}
 
 }

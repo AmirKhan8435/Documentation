@@ -9,10 +9,10 @@ $(document).ready(()=>{
 		$("#submit").click(function(){
 		
 			var serviceData = {};
-			/* plumberData["id"] = $("#id").val();  */
+			/* serviceData["serviceId"] = 1; */
 			serviceData["serviceName"] = $("#serviceName").val();
 			serviceData["serviceAmount"] = $("#serviceAmount").val();
-			serviceData["serviceId"] = 1;
+			
 			console.log(serviceData.serviceName)
 			$.ajax({
 				beforeSend:function(jqXHR,settings){
@@ -36,17 +36,17 @@ $(document).ready(()=>{
 <body>
 	<h2>Enter Plumber Details</h2>
 	
-	<table>
+	<table >
 		<!-- <tr>
 			<td>Id</td>
 			<td><input type="text" id="id"></td>
 		</tr> -->
 		<tr>
-			<td>Service Name</td>
+			<td>Enter Service Name : </td>
 			<td><input type="text" id="serviceName"></td>
 		</tr>
 		<tr>
-			<td>Service ammount</td>
+			<td>Enter Service amount : </td>
 			<td><input type="text" id="serviceAmount"></td>
 		</tr>
 		<tr>

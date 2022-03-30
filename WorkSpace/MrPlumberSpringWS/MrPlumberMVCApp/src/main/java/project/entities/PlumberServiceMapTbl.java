@@ -17,6 +17,7 @@ public class PlumberServiceMapTbl implements Serializable {
 
 	@Id
 	@Column(name="plumber_service_map_id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int plumberServiceMapId;
 
 	//bi-directional many-to-one association to BookingServiceMapTbl
@@ -82,4 +83,9 @@ public class PlumberServiceMapTbl implements Serializable {
 		this.serviceInfoTbl = serviceInfoTbl;
 	}
 
+	public PlumberServiceMapTbl(int id)
+	{
+		this.plumberServiceMapId = id;
+	}
+	
 }

@@ -1,8 +1,11 @@
 package project.entities;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.sql.Time;
+
+import javax.persistence.*;
+
+
 import java.util.Date;
 import java.util.List;
 
@@ -19,6 +22,7 @@ public class BookingTbl implements Serializable {
 
 	@Id
 	@Column(name="booking_id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int bookingId;
 
 	@Temporal(TemporalType.DATE)
@@ -148,6 +152,11 @@ public class BookingTbl implements Serializable {
 
 	public void setCustomerInfoTbl(CustomerInfoTbl customerInfoTbl) {
 		this.customerInfoTbl = customerInfoTbl;
+	}
+	
+	public BookingTbl(int id)
+	{
+		this.bookingId = id;
 	}
 
 }
