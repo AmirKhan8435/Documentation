@@ -17,6 +17,7 @@ public class CustomerInfoTbl implements Serializable {
 
 	@Id
 	@Column(name="customer_id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int customerId;
 
 	@Column(name="customer_address")
@@ -35,7 +36,7 @@ public class CustomerInfoTbl implements Serializable {
 	private String customerPassword;
 
 	@Column(name="customer_phone")
-	private int customerPhone;
+	private String customerPhone;
 
 	@Column(name="customer_pincode")
 	private int customerPincode;
@@ -98,11 +99,11 @@ public class CustomerInfoTbl implements Serializable {
 		this.customerPassword = customerPassword;
 	}
 
-	public int getCustomerPhone() {
+	public String getCustomerPhone() {
 		return this.customerPhone;
 	}
 
-	public void setCustomerPhone(int customerPhone) {
+	public void setCustomerPhone(String customerPhone) {
 		this.customerPhone = customerPhone;
 	}
 

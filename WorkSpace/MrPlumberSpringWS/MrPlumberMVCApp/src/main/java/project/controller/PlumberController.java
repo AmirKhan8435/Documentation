@@ -55,12 +55,10 @@ public class PlumberController {
 	
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Date convertedCurrentDate=null;
-		try {
+		try 
+		{
 			convertedCurrentDate = sdf.parse(jdate);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		} catch (ParseException e) {e.printStackTrace();}
 		
 		PlumberInfoTbl plumber=new PlumberInfoTbl();
 		
@@ -93,7 +91,7 @@ public class PlumberController {
 	{
 		System.out.println("in ajax");
 	
-		System.out.println(plumber.getPlumberAadharNo());
+		System.out.println(plumber.getPlumberJoindate());
 		plumberDAO.addPlumber(plumber);
 		
 		return "zalre";

@@ -6,15 +6,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import project.dao.PlumberDAO;
-import project.entities.PlumberInfoTbl;
+import project.dao.ServiceDAO;
 import project.entities.ServiceInfoTbl;
 
 @Controller
 public class ServiceController {
 	
 	@Autowired
-	PlumberDAO plumberDAO;
+	ServiceDAO serviceDao;
 	
 	@RequestMapping("/addservice")
 	public String service()
@@ -25,13 +24,10 @@ public class ServiceController {
 	}
 	
 	@PostMapping("/addserviceindata")
-	public String addPlumber(@RequestBody ServiceInfoTbl service)
+	public String addService(@RequestBody ServiceInfoTbl service)
 	{
 		System.out.println("in ajax");
-	
-		System.out.println(service.getServiceAmount());
-		plumberDAO.addservice(service);
-		
+		serviceDao.addservice(service);
 		return "zalre";
 		
 	}

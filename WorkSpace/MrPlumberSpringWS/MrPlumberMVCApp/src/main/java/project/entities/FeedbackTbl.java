@@ -6,7 +6,6 @@ import javax.persistence.*;
 
 /**
  * The persistent class for the feedback_tbl database table.
- * 
  */
 @Entity
 @Table(name="feedback_tbl")
@@ -16,6 +15,7 @@ public class FeedbackTbl implements Serializable {
 
 	@Id
 	@Column(name="feedback_id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int feedbackId;
 
 	private String comments;
