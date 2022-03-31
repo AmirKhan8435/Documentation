@@ -2,6 +2,8 @@ package project.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,10 +24,10 @@ public class B_S_MapController {
 	}
 	
 	@PostMapping("/addBSMap")
-	public String addBSMap(@RequestBody BookingServiceMapTbl booking)
+	public String addBSMap(@ModelAttribute BookingServiceMapTbl bsmap, Model model)
 	{
 		System.out.println("in ajax");
-		bsmapDao.addBSMap(booking);
+		bsmapDao.addBSMap(bsmap);
 		return "zalre";	
 	}
 	

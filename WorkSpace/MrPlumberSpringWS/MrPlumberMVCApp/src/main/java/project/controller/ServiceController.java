@@ -2,8 +2,9 @@ package project.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import project.dao.ServiceDAO;
@@ -24,7 +25,7 @@ public class ServiceController {
 	}
 	
 	@PostMapping("/addserviceindata")
-	public String addService(@RequestBody ServiceInfoTbl service)
+	public String addService(@ModelAttribute ServiceInfoTbl service,Model model)
 	{
 		System.out.println("in ajax");
 		serviceDao.addservice(service);
