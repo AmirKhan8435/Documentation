@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Spring MVC - JSON Request Sample</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
 <script>
 $(document).ready(()=>{
  
@@ -38,11 +38,12 @@ $(document).ready(()=>{
 		});
  
 	});
-</script>	
+</script> -->	
 </head>
 <body>
 	<h2>Enter Booking Details</h2>
 	
+	<form method="post" action="addBooking"></form>
 	<table>
 		<!-- <tr>
 			<td>Id</td>
@@ -50,45 +51,44 @@ $(document).ready(()=>{
 		</tr> -->
 		<tr>
 			<td>Work Date</td>
-			<td><input type="date" id="workdate"></td>
+			<td><input type="date" id="workDate" name="workDate"></td>
 		</tr>
 		<tr>
 			<td>Work Time</td>
-			<td><input type="time" step="2" min="9:00" max="20:00" id="worktime" required="required"></td>
+			<td><input type="time"  id="workTime" name="workTime" step="2" min="9:00" max="20:00" required="required"></td>
 		</tr>
 		<tr>
 			<td>Work Address</td>
-			<td><input type="text" id="workaddress"></td>
+			<td><input type="text" id="workAddress" name="workAddress"></td>
 		</tr>
 		<tr>
 			<td>Work Pincode</td>
-			<td><input type="number" id="workpincode"></td>
+			<td><input type="number" id="workPincode" name="workPincode"></td>
 		</tr>
 		
 		<tr>
 			<td>Booking Date:</td>
-			<td><input type="date" id="bdate"></td>
+			<td><input type="date" id="bookingDate" name="bookingDate"></td>
 		</tr>
 		
 		<tr>
 			<td>Booking Status</td>
-			<td><input type="text" id="bstatus"></td>
+			<td><input type="text" id="bookingStatus" name="bookingStatus"></td>
 		</tr>
 		
 		<tr>
 			<td>Booking Total Amount</td>
-			<td><input type="number" id="btamount"></td>
+			<td><input type="number" id="bookingTotalAmount" name="bookingTotalAmount"></td>
 		</tr>
 		
 		<tr>
 			<td colspan="2"><input type="submit" id="submit" value="Submit" /></td>
 		</tr>
 	</table>
+	</form>
 	
 	<hr/>
-	<div id="displayDiv" style="display:none"><h3>JSON Data returned from Server after processing</h3>
-		<div id="processedData"></div>
-	</div>
+	
 
 </body>
 </html>
