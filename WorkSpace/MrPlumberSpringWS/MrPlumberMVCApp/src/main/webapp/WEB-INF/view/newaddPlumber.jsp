@@ -2,8 +2,8 @@
 <html>
 <head>
 <title>Spring MVC - JSON Request Sample</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
-<script>
+
+<!-- <script>
 $(document).ready(()=>{
  
 		$("#submit").click(function(){
@@ -39,11 +39,11 @@ $(document).ready(()=>{
 		});
  
 	});
-</script>	
+</script>	 -->
 </head>
 <body>
 	<h2>Enter Plumber Details</h2>
-	
+	<form action="addajax" method="post">
 	<table>
 		<!-- <tr>
 			<td>Id</td>
@@ -51,55 +51,52 @@ $(document).ready(()=>{
 		</tr> -->
 		<tr>
 			<td>First Name</td>
-			<td><input type="text" id="firstName"></td>
+			<td><input type="text" id="plumberFirstname" name="plumberFirstname"></td>
 		</tr>
 		<tr>
 			<td>Last Name</td>
-			<td><input type="text" id="lastName"></td>
+			<td><input type="text" id="plumberLastname" name="plumberLastname"></td>
 		</tr>
 		<tr>
 			<td>User Name</td>
-			<td><input type="text" id="user"></td>
+			<td><input type="text" id="plumberUsername" name="plumberUsername"></td>
 		</tr>
 		<tr>
 			<td>Password</td>
-			<td><input type="text" id="password"></td>
+			<td><input type="text" id="plumberPassword" name="plumberPassword"></td>
 		</tr>
 		
 		<tr>
 			<td>Address</td>
-			<td><input type="text" id="address"></td>
+			<td><input type="text" id="plumberAddress" name="plumberAddress"></td>
 		</tr>
 		
 		<tr>
 			<td>Pincode</td>
-			<td><input type="number" id="pincode"></td>
+			<td><input type="number" id="plumberPincode" name="plumberPincode"></td>
 		</tr>
 		
 		<tr>
 			<td>AadharNo.</td>
-			<td><input type="text" id="aadhar"></td>
+			<td><input type="text" id="plumberAadharNo" name="plumberAadharNo"></td>
 		</tr>
 		
 		<tr>
 			<td>Phone</td>
-			<td><input type="text" id="phone"></td>
+			<td><input type="text" id="plumberPhone" name="plumberPhone"></td>
 		</tr>
 		
 		<tr>
 			<td>Date</td>
-			<td><input type="date" id="date"></td>
+			<td><input type="date"  id="plumberJoindate" name="plumberJoindate"></td>
 		</tr>
 		
 		<tr>
 			<td colspan="2"><input type="submit" id="submit" value="Submit" /></td>
 		</tr>
 	</table>
+	</form>
 	
-	<hr/>
-	<div id="displayDiv" style="display:none"><h3>JSON Data returned from Server after processing</h3>
-		<div id="processedData"></div>
-	</div>
 
 </body>
 </html>

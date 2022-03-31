@@ -3,6 +3,8 @@ package project.entities;
 import java.io.Serializable;
 import javax.persistence.*;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.util.Date;
@@ -35,6 +37,7 @@ public class PlumberInfoTbl  implements Serializable {
 	@Column(name="plumber_firstname")
 	private String plumberFirstname;
 
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	@Column(name="plumber_joindate")
 	private Date plumberJoindate;

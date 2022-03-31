@@ -1,6 +1,7 @@
 package project.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,9 +13,11 @@ import project.entities.CustomerInfoTbl;
 public class CustomerController 
 {
 	@Autowired
+	private BCryptPasswordEncoder passwordEncoder;
+	@Autowired
 	CustomerDAO custDAO;
 	
-	@RequestMapping("/addcust")
+	@RequestMapping("/customeradd")
 	public String customer()
 	{
 		System.out.println("in customer");
@@ -25,6 +28,7 @@ public class CustomerController
 	public String addService(@RequestBody CustomerInfoTbl customer)
 	{
 		System.out.println("in ajax");
+		customer.setCustomerPassword(passwordEncoder.encode(customer.getCustomerPassword()));
 		custDAO.addCustomer(customer);
 		return "zalre";	
 	}

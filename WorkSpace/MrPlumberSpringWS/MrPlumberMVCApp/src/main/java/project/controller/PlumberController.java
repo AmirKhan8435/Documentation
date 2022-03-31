@@ -5,8 +5,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,8 +19,11 @@ import project.dao.PlumberDAO;
 import project.entities.PlumberInfoTbl;
 
 @Controller
+
 public class PlumberController {
 
+	@Autowired
+	private BCryptPasswordEncoder passwordEncoder;
 	@Autowired
 	PlumberDAO plumberDAO;
 	
@@ -87,10 +93,10 @@ public class PlumberController {
 	}
 	
 	@PostMapping("/addajax")
-	public String addPlumber(@RequestBody PlumberInfoTbl plumber)
+	public String addPlumber(@ModelAttribute PlumberInfoTbl plumber,Model model)
 	{
 		System.out.println("in ajax");
-	
+	    plumber.setPlumberPassword(passwordEncoder.encode(plumber.getPlumberPassword()));
 		System.out.println(plumber.getPlumberJoindate());
 		plumberDAO.addPlumber(plumber);
 		
