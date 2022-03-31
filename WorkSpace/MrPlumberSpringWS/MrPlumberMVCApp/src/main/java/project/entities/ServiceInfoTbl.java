@@ -101,5 +101,9 @@ public class ServiceInfoTbl implements Serializable {
 
 		return plumberServiceMapTbl;
 	}
-
+	
+	public ServiceInfoTbl(int id) 
+	{
+		this.serviceId = id;
+	}
 }

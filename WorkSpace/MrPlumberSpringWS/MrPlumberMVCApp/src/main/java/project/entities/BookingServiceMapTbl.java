@@ -13,6 +13,7 @@ public class BookingServiceMapTbl implements Serializable {
 
 	@Id
 	@Column(name="booking_service_id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int bookingServiceId;
 
 	//bi-directional many-to-one association to BookingTbl
@@ -78,4 +79,9 @@ public class BookingServiceMapTbl implements Serializable {
 		return feedbackTbl;
 	}
 
+	public BookingServiceMapTbl(int id)
+	{
+		this.bookingServiceId = id;
+	}
+	
 }

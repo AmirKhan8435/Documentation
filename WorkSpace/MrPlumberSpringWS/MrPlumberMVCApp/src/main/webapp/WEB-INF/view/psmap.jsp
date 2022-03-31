@@ -9,17 +9,17 @@ $(document).ready(()=>{
 		$("#submit").click(function(){
 		
 			var psmapData = {};
-			/* plumberData["id"] = $("#id").val();  */
+			psmapData["plumberServiceMapId"] = 1;
 			psmapData["plumberInfoTbl"] = $("#plumberId").val();
 			psmapData["serviceInfoTbl"] = $("#serviceId").val();
-			psmapData["plumberServiceMapId"] = 1;
-			console.log(psmapData.serviceName)
+			
+			
 			$.ajax({
 				beforeSend:function(jqXHR,settings){
 					jqXHR.setRequestHeader('Content-Type','application/json');
 				},
 				type : "POST",
-				url : "/addserviceindata",
+				url : "/addpsmapdata",
 				data : JSON.stringify(psmapData),
 						
 				 success : function(data) {
@@ -42,15 +42,15 @@ $(document).ready(()=>{
 			<td><input type="text" id="id"></td>
 		</tr> -->
 		<tr>
-			<td>Service Id</td>
+			<td>Service Id :</td>
 			<td><input type="text" id="serviceId"></td>
 		</tr>
 		<tr>
-			<td>Plumber Id</td>
+			<td>Plumber Id :</td>
 			<td><input type="text" id="plumberId"></td>
 		</tr>
 		<tr>
-			<td colspan="2"><input type="submit" id="submit" value="Submit" /></td>
+			<td colspan="2"><input type="submit" id="submit" value="submit" /></td>
 		</tr>
 	</table>
 	
