@@ -2,6 +2,8 @@ package project.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +24,7 @@ public class BookingController
 	}
 	
 	@PostMapping("/addBooking")
-	public String addBooking(@RequestBody BookingTbl booking)
+	public String addBooking(@ModelAttribute BookingTbl booking,Model model)
 	{
 		System.out.println("in ajax");
 		bDao.addBooking(booking);
