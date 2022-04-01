@@ -1,3 +1,4 @@
+<%@page import="project.entities.*"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
@@ -43,6 +44,7 @@ $(document).ready(()=>{
 </head>
 <body>
 	<h2>Enter Plumber Details</h2>
+	<p>${plumber.getPlumberLastname()} </p>
 	<form action="addajax" method="post">
 	<table>
 		<!-- <tr>

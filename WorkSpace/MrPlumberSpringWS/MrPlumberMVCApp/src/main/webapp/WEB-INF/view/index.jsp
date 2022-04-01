@@ -8,5 +8,6 @@
 </head>
 <body>
 	<h1>Hi Welcome to Mr.Plumber</h1>
+	<p>${plumber.getPlumberLastname()} </p>
 </body>
 </html>

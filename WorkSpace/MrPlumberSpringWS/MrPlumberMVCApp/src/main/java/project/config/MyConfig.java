@@ -12,6 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
+
 public class MyConfig extends WebSecurityConfigurerAdapter{
 
 	@Bean
@@ -52,10 +53,10 @@ public class MyConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/add**").hasRole("PLUMBER")
 		.antMatchers("/cu**").hasRole("CUSTOMER")
-		.antMatchers("/**").permitAll().and().formLogin().and().csrf().disable();
+		.antMatchers("/**").permitAll().and().formLogin().loginPage("/signin").and().csrf().disable();
 		
 	}
-	
+	 
 	
 	
 	
