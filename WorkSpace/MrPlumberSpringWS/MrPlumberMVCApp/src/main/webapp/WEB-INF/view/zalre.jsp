@@ -5,6 +5,8 @@
 <body>
 <h1>ZAL.....re</h1>
 
-enter your name <input type="text" name="name">
+id : ${plumber..getPlumberId()}
+My name is : ${plumber.getPlumberFirstname()}
+
 </body>
 </html>
