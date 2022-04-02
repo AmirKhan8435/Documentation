@@ -1,0 +1,143 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<section class=" text-center text-lg-start">
+  <style>
+    .rounded-t-5 {
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+
+    @media (min-width: 992px) {
+      .rounded-tr-lg-0 {
+        border-top-right-radius: 0;
+      }
+
+      .rounded-bl-lg-5 {
+        border: bottom left radius 40px;
+      }
+    }
+  </style>
+
+  <body>
+  
+   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+		<div class="container">
+			<a class="navbar-brand" href="index.html">Mr.Plumber</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fa fa-bars"></span> Menu
+			</button>
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+					<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+					<li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+					<li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+					<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+					  
+					 <li class="nav-item"><a href="plumberDashbord.html" class="nav-link">Plumber Dashboard</a></li> 
+					 <li class="nav-item"><a href="customerDashbord.html" class="nav-link">Customer Dashboard</a></li>
+					 <li class="nav-item"><a href="login2.html" class="nav-link">Login</a></li> 
+					<!-- <button type="button" class="btn btn-primary btn-lg show-modal" data-toggle="modal" data-target="#myModal">
+						Login Form
+					  </button> -->
+				</ul>
+			</div>
+		</div>
+	</nav>
+    <div class="card mb-3">
+      <div class="row g-0 d-flex align-items-center">
+        <div class="col-lg-4 d-none d-lg-flex">
+          <img src="https://www.vblue.in/simg/plumber.jpg" alt="Trendy Pants and Shoes"
+             height="800px" width="800px" />
+        </div>
+        <div class="col-lg-8">
+          <div class="card-body py-5 px-md-5">
+
+            <form style="margin-left: 300px;" action="addBooking" method="post">
+				
+			<%-- <div class="col-md-6">
+                <input type="date" id="customerInfoTbl" name="customerInfoTbl" class="form-control" value="${customer.getCustomerId()}" />
+                <label class="form-label" for="customerInfoTbl">Customer Id</label>
+              </div><br> --%>
+
+              <div class="col-md-6">
+                <input type="date" id="workDate" name="workDate" class="form-control" placeholder="Enter Work Date" />
+                <label class="form-label" for="workDate">Enter Date</label>
+              </div><br>
+
+              <div class="col-md-6">
+                <input type="time" step="2" id="workTime" name="workTime" class="form-control" placeholder="Enter Time" />
+                <label class="form-label" for="workTime">Enter Time</label>
+              </div><br>
+
+
+              <div class="col-md-6">
+                <input type="text" id="workAddress" name="workAddress" class="form-control" placeholder="Enter Address" />
+                <label class="form-label" for="workAddress">WorkAddress</label>
+              </div><br>
+
+              <div class="col-md-6">
+                <input type="number" id="workPincode" name="workPincode" placeholder="Enter Work Pincode" />
+                <label class="form-label" for="workPincode"></label>
+              </div><br>
+				
+				 <div class="col-md-6">
+                <input type="date" id="bookingDate" name="bookingDate" class="form-control" placeholder="Enter Booking Date" />
+                <label class="form-label" for="bookingDate">Enter Booking Date</label>
+              </div><br>
+
+             
+          </div>
+
+          <div style="margin-left: 400px;">
+            <p>
+            <h5><b>Choose Services</h5></b></p>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault" name="service"/>
+              <label class="form-check-label" for="flexCheckDefault">Basin & Sink</label>
+            </div><br>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="2" id="flexCheckChecked" name="service" />
+              <label class="form-check-label" for="flexCheckChecked">Blockage/Leakage</label>
+            </div><br>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="3" id="flexCheckDefault" name="service" />
+              <label class="form-check-label" for="flexCheckDefault">Water Tank</label>
+            </div><br>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="4" id="flexCheckDefault" name="service" />
+              <label class="form-check-label" for="flexCheckDefault">Minor Installation</label>
+            </div><br>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="5" id="flexCheckDefault" name="service" />
+              <label class="form-check-label" for="flexCheckDefault">Tap & Mixer</label>
+            </div><br>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="6" id="flexCheckDefault" name="service"/>
+              <label class="form-check-label" for="flexCheckDefault">Motor</label>
+            </div><br>
+          </div>
+
+
+          <div class="row">
+            <center>
+              <div class="col-md-6">
+                <button type="submit" class="btn btn-primary btn-block mb-4">Book service</button>
+              </div>
+            </center>
+          </div>
+        </form>
+
+        </div>
+      </div>
+    </div>
+    </div>
+</section>
+</body>

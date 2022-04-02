@@ -29,11 +29,14 @@ public class PlumberServiceMapTbl implements Serializable {
 	@JoinColumn(name="plumber_id")
 	private PlumberInfoTbl plumberInfoTbl;
 
+	
 	//bi-directional many-to-one association to ServiceInfoTbl
 	@ManyToOne
 	@JoinColumn(name="service_id")
 	private ServiceInfoTbl serviceInfoTbl;
 
+	
+	
 	public PlumberServiceMapTbl() {
 	}
 
@@ -87,5 +90,12 @@ public class PlumberServiceMapTbl implements Serializable {
 	{
 		this.plumberServiceMapId = id;
 	}
+	
+	public PlumberServiceMapTbl(PlumberInfoTbl plumberInfoTbl,ServiceInfoTbl serviceInfoTbl )
+	{
+		this.plumberInfoTbl= plumberInfoTbl;
+		this.serviceInfoTbl = serviceInfoTbl;
+	}
+	
 	
 }

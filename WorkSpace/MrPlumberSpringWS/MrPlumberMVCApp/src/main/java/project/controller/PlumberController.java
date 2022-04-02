@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +24,19 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import project.dao.PlumberDAO;
+import project.entities.CustomerInfoTbl;
 import project.entities.PlumberInfoTbl;
+import project.entities.PlumberServiceMapTbl;
+import project.entities.ServiceInfoTbl;
 import project.repository.PlumberRepo;
+import project.repository.PlumberServiceMapRepo;
 
 @Controller
 @SessionAttributes("plumber")
 public class PlumberController {
 
+	@Autowired
+	PlumberServiceMapRepo psmapRepo;
 	@Autowired
 	PlumberRepo plumberRepo;
 	@Autowired
@@ -90,19 +97,25 @@ public class PlumberController {
 	 * }
 	 */
 	
+	@RequestMapping("/plumberlogin")
+	public String plumberlogin()
+	{
+		System.out.println("plumberlogin");
+		return "login";
+	}
+	
 	@RequestMapping("/signin")
 	public String signin()
 	{
 		
+		System.out.println("signin");
 		return "login";
 	}
 	
-	@PostMapping("/home")
-	public String home(@RequestParam String username,ModelMap model)
+	
+	@GetMapping("/")
+	public String index()
 	{
-		PlumberInfoTbl plumber=plumberRepo.getPlumberByName(username);
-		model.put("plumber", plumber);
-		System.out.println("home");
 		return "index";
 	}
 	
@@ -116,18 +129,65 @@ public class PlumberController {
 		
 	}
 	
-	@PostMapping()
-	public ModelAndView addPlumber(@ModelAttribute PlumberInfoTbl plumber,Model model)
+	@RequestMapping("/signinplumber")
+	public String customerlogin2()
 	{
-		ModelAndView mv = new ModelAndView();
-		plumberDAO.addPlumber(plumber);
-		System.out.println("in ajax");
+		return "plumberlogin";
+	}
+	
+	@PostMapping("/loginplumber")
+	public String logincustomer(@RequestParam String username,@RequestParam String password,ModelMap model)
+	{
+		PlumberInfoTbl plumber = plumberRepo.getPlumberByName(username);
+		model.put("customer", plumber);
+		if(plumber== null)
+		{
+			return "plumberlogin";
+		}
+		return "index";
+	}
+	
+	
+	@PostMapping("/addplumbertodb")
+	public String addPlumber(@ModelAttribute PlumberInfoTbl plumber,Model model,HttpServletRequest req)
+	{
+		String[] services = req.getParameterValues("service");
+		int [] serviceIds=new int[services.length];
+		
+		for (int i=0;i<services.length;i++) 
+		{
+			
+			serviceIds[i]=Integer.parseInt(services[i]);
+	    	
+		}
+		
+		System.out.println("plumber to db");
+		
 	    plumber.setPlumberPassword(passwordEncoder.encode(plumber.getPlumberPassword()));
-	    //mv.addObject("plumber", plumber);
-		System.out.println(plumber.getPlumberJoindate());
+	    plumberDAO.addPlumber(plumber);
+	    
+	    PlumberInfoTbl foundPlumber = plumberRepo.getPlumberByName(plumber.getPlumberUsername());
+	   
+	    int plumberID=foundPlumber.getPlumberId();
+	    
+	    PlumberInfoTbl plumberId=new PlumberInfoTbl(plumberID);
+	    
+	    for (int sid : serviceIds) {
+			
+	    	ServiceInfoTbl serviceId=new ServiceInfoTbl(sid);
+	    	PlumberServiceMapTbl psMap= new PlumberServiceMapTbl(plumberId,serviceId);
+	    	
+	    	
+	    	psmapRepo.save(psMap);
+	    	
+		}
+		return "index";
 		
-		mv.setViewName("zalre");
-		return mv;
+	}
+	
+	@RequestMapping("/plumberDashbord")
+	public String plumberDashbord() {
 		
+		return "plumberDashbord";
 	}
 }

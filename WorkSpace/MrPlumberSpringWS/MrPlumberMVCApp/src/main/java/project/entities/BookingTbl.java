@@ -5,6 +5,7 @@ import java.sql.Time;
 
 import javax.persistence.*;
 
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 import java.util.List;
@@ -25,8 +26,10 @@ public class BookingTbl implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int bookingId;
 
+	
 	@Temporal(TemporalType.DATE)
 	@Column(name="booking_date")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date bookingDate;
 
 	@Column(name="booking_status")
@@ -38,6 +41,7 @@ public class BookingTbl implements Serializable {
 	@Column(name="work_address")
 	private String workAddress;
 
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	@Column(name="work_date")
 	private Date workDate;
