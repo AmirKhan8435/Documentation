@@ -1,0 +1,13 @@
+table 1 : create table customer_info_tbl (customer_id int primary key auto_increment,customer_firstname varchar(100) not null,customer_lastname varchar(100) not null,customer_username varchar(100) not null,customer_password varchar(200) unique key not null,customer_address varchar(100) not null,customer_pincode int not null,customer_email varchar(200),customer_phone int not null);
+
+table 2 : create table plumber_info_tbl (plumber_id int primary key auto_increment,plumber_firstname varchar(100) not null,plumber_lastname varchar(100) not null,plumber_username varchar(100) not null,plumber_password varchar(200) unique key not null,plumber_address varchar(100) not null,plumber_pincode int not null,plumber_aadhar_no long not null, plumber_email varchar(200),plumber_phone long not null,plumber_joindate date not null,plumber_photo blob);
+
+table 3 : create table booking_tbl (booking_id int primary key auto_increment,customer_id int,work_date date not null,work_time time not null,service_id int,work_address varchar(1000) not null,work_pincode int not null,booking_date date not null,booking_status varchar(100) not null,booking_total_amount int not null,foreign key(customer_id) references customer_info_tbl(customer_id));
+
+table 4 : create table service_info_tbl (sevice_id int primary key auto_increment,sevice_name varchar(100) not null,service_amount double not null,service_description varchar(100),service_image blob);
+
+table 5 : create table booking_service_map_tbl (booking_service_id int primary key auto_increment,booking_id int,plumber_service_map_id int,foreign key(booking_id) references booking_tbl(booking_id),foreign key(plumber_service_map_id) references plumber_service_map_tbl(plumber_service_map_id));
+
+table 6 : create table plumber_service_map_tbl (plumber_service_map_id int primary key auto_increment,plumber_id int,service_id int,foreign key(plumber_id) references plumber_info_tbl(plumber_id),foreign key(service_id) references service_info_tbl(service_id));
+
+table 7 : create table feedback_tbl (feedback_id int primary key auto_increment,booking_service_id int,punctuality int,service int,etiquette int,price int,overall int,review varchar(2000),comments varchar(2000),foreign key(booking_service_id) references booking_service_map_tbl(booking_service_id));
