@@ -238,9 +238,9 @@
                                     
                                     <div  class="alert alert-danger">
                                     You have been logout
-                                    </div> th:action="@{/signin}" --%>
+                                    </div>  --%>
                                     
-									<form  action="/home" method="post">
+									<form  th:action="@{/signin}" action="#" method="post">
 										<p class="description">
 
 
@@ -265,12 +265,10 @@
 										<br> <br>
 
 										<div class="member">If not a Member</div>
-										<a style="margin-left: 140px;" href="plumber.html"
+										<a style="margin-left: 140px;color: blue;" href="registerplumber.html"
 											class="member">Register as Plumber</a><br> <a
-											style="margin-left: 150px;" href="customer.html"
+											style="margin-left: 150px; color: blue;" href="registercustomer.html"
 											class="member">Register as Customer</a>
-
-									</form>
 								</div>
 							</div>
 						</div>
