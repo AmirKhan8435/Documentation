@@ -1,0 +1,164 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+.kv-avtar .krajee-default.file-preview-frame,.kv-avtar .krajee-default.file-preview-frame:hover {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+}
+.kv-avtar {
+    display: inline-block;
+}
+.kv-avtar .file-input {
+    display: table-cell;
+    width: 213px;
+}
+.kv-reqd {
+    color: red;
+    font-family: monospace;
+    font-weight: normal;
+}
+    .card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: .75em;
+  padding-right: .75em;
+}
+.card-registration .select-arrow {
+  top: 13px;
+}
+</style>
+<body>
+    
+    <section class="h-100 bg-dark">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+              <div class="card card-registration my-4">
+                <div class="row g-0">
+                  <div class="col-xl-6 d-none d-xl-block">
+                    <img
+                      src="https://previews.123rf.com/images/stocking/stocking1210/stocking121000111/15667246-portr%C3%A4t-einer-l%C3%A4chelnden-klempner-bei-der-arbeit.jpg"
+                      alt="Sample photo"
+                      class="img-fluid"
+                      style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;"
+                    />
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="card-body p-md-5 text-black">
+                      <h3 class="mb-5 text-uppercase">Plumber registration</h3>
+
+                      <form class="form form-vertical" action="/site/avtar-upload/1" method="post" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-sm-4 text-center">
+                                <div class="kv-avtar">
+                                    <div class="file-loading">
+                                        <input id="avtar-1" name="avtar-1" type="file" required>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                     
+                      <div class="row">
+                        <div class="col-md-6 mb-4">
+                          <div class="form-outline">
+                              <br>
+                            <input type="text" id="form3Example1m" class="form-control form-control-lg" />
+                            <label class="form-label" for="form3Example1m">First name</label>
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                          <div class="form-outline">
+                              <br>
+                            <input type="text" id="form3Example1n" class="form-control form-control-lg" />
+                            <label class="form-label" for="form3Example1n">Last name</label>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <div class="row">
+                        <div class="col-md-6 mb-4">
+                          <div class="form-outline">
+                            <input type="text" id="form3Example1m1" class="form-control form-control-lg" />
+                            <label class="form-label" for="form3Example1m1">Username</label>
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                          <div class="form-outline">
+                            <input type="text" id="form3Example1n1" class="form-control form-control-lg" />
+                            <label class="form-label" for="form3Example1n1">Password</label>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <div class="form-outline mb-4">
+                        <input type="text" id="form3Example8" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example8">Address</label>
+                      </div>
+      
+                      
+                      <div class="form-outline mb-4">
+                        <input type="text" id="form3Example90" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example90">Pincode</label>
+                      </div>
+      
+                      <div class="form-outline mb-4">
+                        <input type="text" id="form3Example99" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example99">AdharCard No</label>
+                      </div>
+      
+                      <div class="form-outline mb-4">
+                        <input type="text" id="form3Example97" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example97">Phone</label>
+                      </div>
+
+                      <div class="form-outline mb-4">
+                        <input type="date" id="form3Example97" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example97">Joining Date</label>
+                      </div>
+
+                      <p><h5><b>Choose Services</h5></b></p>
+
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">Basin & Sink</label>
+                      </div><br>
+                    
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked/>
+                        <label class="form-check-label" for="flexCheckChecked">Blockage/Leakage</label>
+                      </div><br>
+
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">Water Tank</label>
+                      </div><br>
+
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">Minor Installation</label>
+                      </div><br>
+
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">Tap & Mixer</label>
+                      </div><br>
+
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">Motor</label>
+                      </div><br><br>
+      
+                        <a href="services.html"><button  type="button" class="btn btn-warning btn-lg ms-2">Submit form</button></a>
+                      </div>
+      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+</body>
