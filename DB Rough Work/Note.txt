@@ -1,9 +1,0 @@
-*First review*
-Changes said by mam :- 1] Delete admin table
-                       2] Add new table service having Service_id and name
-
-Modification suggested by mam :- we can manage one plumber to different areas using pin code
-
-*Date 29-01-22*
-1] Flow diagram done 
-2] changes have to do - for execution of rating & review system we can send request to multiple plumbers by which we can show the list of plumbers with rating to customers.   
